@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #672e20, #8d3f04);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed from height to min-height */
+    animation: backgroundAnimation 15s ease-in-out infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #c28474, #feb47b);
+    }
+    50% {
+        background: linear-gradient(135deg, #5b4a73, #c9a59c);
+    }
+    100% {
+        background: linear-gradient(135deg, #a5b8d4, #ba82b5);
+    }
+}
+
+.container, .resume-page {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 90%; /* Adjusted width for responsiveness */
+    border-radius: 12px;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    animation: fadeIn 1s ease-out, scaleUp 1s ease-out;
+    margin: 20px 0; /* Added margin for better spacing on mobile */
+}
+
+.container:hover, .resume-page:hover {
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+/* Fade-in and Scaling Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2 {
+    color: #ff4081;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    animation: colorChange 5s infinite;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #404aa2;
+    }
+    50% {
+        color: #3fbaab;
+    }
+    100% {
+        color: #a45e32;
+    }
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #793773;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 10px rgba(63, 81, 181, 0.6);
+    outline: none;
+}
+
+button {
+    padding: 14px 24px;
+    background-color: #774556;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width button for smaller screens */
+}
+#backButton {
+    width: 100%;
+}
+
+button:hover {
+    background-color: #c51162;
+    transform: scale(1.05); /* Slightly reduced scale for mobile */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.resume-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #482d36;
+    transition: transform 0.4s ease, border-color 0.3s ease;
+    margin-left: 35%;
+}
+
+.resume-photo:hover {
+    transform: scale(1.1); /* Reduced hover effect for better performance on mobile */
+    border-color: #a03d6a;
+}
+
+#backButton {
+    width: 30%;
+    margin-left: 35%;
+}
+#downloadButton {
+    width: 30%;
+    margin-left: 35%;
+    margin: 2%;
+    padding: 2;
+    
+   
+}
+
+/* Editable Section Styles */
+[contenteditable="true"] {
+    border: 1px dashed #ddd; /* Dashed border for editable sections */
+    padding: 5px;
+    cursor: text; /* Changes cursor to text indicator */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+[contenteditable="true"]:focus {
+    outline: none; /* Remove the default outline on focus */
+    background-color: #f0f0f0; /* Change background color on focus */
+    border-color: #3f51b5; /* Change border color on focus */
+}
+
+/* Responsive Styles */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        max-width: 90vw;
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .resume-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+}
+
+/* Mobile Devices */
+@media (max-width: 544px) {
+    .container {
+        padding: 10px;
+        max-width: 95vw;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .resume-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Smaller Mobile Devices */
+@media (max-width: 344px) {
+    .container {
+        padding: 8px;
+        max-width: 100%;
+    }
+
+    h1, h2 {
+        font-size: 1.3rem;
+    }
+
+    input, textarea {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .resume-photo {
+        width: 90px;
+        height: 90px;
+    }
+    
+}
